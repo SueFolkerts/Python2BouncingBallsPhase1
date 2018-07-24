@@ -1,3 +1,4 @@
+import sys
 import pygame
 from pygame.locals import *
 pygame.init()
@@ -12,7 +13,11 @@ color = (26, 255, 255)
 def main():
     while True:
         clock.tick(60)
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                sys.exit()
         screen.fill(color)
         pygame.display.flip()
+
 if __name__ == '__main__':
     main()
